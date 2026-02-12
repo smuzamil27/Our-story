@@ -1,24 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Mubeena | My Dua Answered</title>
-    <meta name="description" content="A heartfelt dedication to Mubeena - My Dua Answered">
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
-        rel="stylesheet">
-    <style>
+<html lang="en" vid="0"><head vid="1">
+    <meta charset="UTF-8" vid="2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" vid="3">
+    <title vid="4">To Mubeena | My Dua Answered</title>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" vid="5"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" vid="6"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" vid="7"></script>
+    <script src="https://cdn.tailwindcss.com" vid="8"></script>
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js" vid="9"></script>
+    <script src="https://unpkg.com/lucide@latest" vid="10"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Lato:wght@300;400;700&amp;display=swap" rel="stylesheet" vid="11">
+    <style vid="12">
         body {
             font-family: 'Lato', sans-serif;
             background-color: #FAFAFA;
-            color: #4A0424;
+            color: #4A0424; 
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
@@ -27,25 +22,28 @@
             font-family: 'Playfair Display', serif;
         }
 
+        
         .text-gradient {
             background: linear-gradient(135deg, #6d0b38 0%, #c23d7f 50%, #e88eb8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
+        
         .bg-gradient-satin {
             background: linear-gradient(135deg, #831843 0%, #be185d 100%);
         }
 
+        
         .islamic-pattern {
-            background-image:
+            background-image: 
                 radial-gradient(circle at 50% 50%, transparent 0%, transparent 45%, rgba(190, 24, 93, 0.03) 45.1%, transparent 45.2%),
                 linear-gradient(30deg, rgba(190, 24, 93, 0.03) 1px, transparent 1px),
                 linear-gradient(150deg, rgba(190, 24, 93, 0.03) 1px, transparent 1px);
             background-size: 100px 100px, 60px 60px, 60px 60px;
         }
 
+        
         .glass-card {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
@@ -57,7 +55,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .shimmer::after {
             content: '';
             position: absolute;
@@ -65,54 +62,45 @@
             left: -100%;
             width: 50%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
             animation: shimmer-anim 3s infinite;
         }
 
         @keyframes shimmer-anim {
-            0% {
-                left: -100%;
-            }
-
-            100% {
-                left: 200%;
-            }
+            0% { left: -100%; }
+            100% { left: 200%; }
         }
 
+        
         ::-webkit-scrollbar {
             width: 6px;
         }
-
         ::-webkit-scrollbar-track {
-            background: #fdf2f8;
+            background: #fdf2f8; 
         }
-
         ::-webkit-scrollbar-thumb {
-            background: #fbcfe8;
+            background: #fbcfe8; 
             border-radius: 10px;
         }
 
         /* Snowfall Animation */
         @keyframes snowfall {
-            0% {
-                transform: translateY(-15vh) translateX(0) rotate(0deg);
-                opacity: 0;
+            0% { 
+                transform: translateY(-15vh) translateX(0) rotate(0deg); 
+                opacity: 0; 
             }
-
-            5% {
-                opacity: 1;
+            5% { 
+                opacity: 1; 
             }
-
-            95% {
-                opacity: 1;
+            95% { 
+                opacity: 1; 
             }
-
-            100% {
-                transform: translateY(115vh) translateX(30px) rotate(360deg);
-                opacity: 0;
+            100% { 
+                transform: translateY(115vh) translateX(30px) rotate(360deg); 
+                opacity: 0; 
             }
         }
-
+        
         .snowflake {
             position: fixed;
             top: -15vh;
@@ -124,17 +112,17 @@
         }
     </style>
 </head>
+<body vid="13">
+    <div id="root" vid="14"></div>
 
-<body>
-    <div id="root"></div>
-
-    <script type="text/babel">
+    <script type="text/babel" vid="15">
         const { useState, useEffect, useRef } = React;
         const { motion, AnimatePresence } = window.Motion;
 
+        
         const HeartIcon = ({ className }) => (
             <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
             </svg>
         );
 
@@ -145,6 +133,7 @@
         );
 
         const FloatingHearts = () => {
+            
             const hearts = Array.from({ length: 8 });
             return (
                 <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
@@ -152,14 +141,14 @@
                         <motion.div
                             key={i}
                             initial={{ y: "120vh", opacity: 0, x: Math.random() * window.innerWidth }}
-                            animate={{
-                                y: "-20vh",
+                            animate={{ 
+                                y: "-20vh", 
                                 opacity: [0, 0.4, 0],
-                                x: `calc(${Math.random() * 100}vw + ${Math.random() * 50 - 25}px)`
+                                x: `calc(${Math.random() * 100}vw + ${Math.random() * 50 - 25}px)` 
                             }}
-                            transition={{
-                                duration: 15 + Math.random() * 20,
-                                repeat: Infinity,
+                            transition={{ 
+                                duration: 15 + Math.random() * 20, 
+                                repeat: Infinity, 
                                 delay: Math.random() * 10,
                                 ease: "linear"
                             }}
@@ -174,12 +163,13 @@
 
         const GeometricBackground = () => (
             <div className="fixed inset-0 pointer-events-none z-0 opacity-40 islamic-pattern">
-                <motion.div
+                {}
+                <motion.div 
                     animate={{ rotate: 360 }}
                     transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
                     className="absolute top-[-20%] right-[-20%] w-[80vw] h-[80vw] border-[0.5px] border-pink-200 rounded-full opacity-20"
                 />
-                <motion.div
+                 <motion.div 
                     animate={{ rotate: -360 }}
                     transition={{ duration: 150, repeat: Infinity, ease: "linear" }}
                     className="absolute bottom-[-10%] left-[-10%] w-[60vw] h-[60vw] border-[0.5px] border-pink-200 rounded-full opacity-20"
@@ -211,7 +201,7 @@
                 const newState = !isExpanded;
                 setIsExpanded(newState);
                 setShowSnowfall(newState);
-
+                
                 if (newState && sectionRef.current) {
                     setTimeout(() => {
                         sectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -243,9 +233,9 @@
                 <div className="min-h-screen bg-[#FFF5F7] text-[#500724] overflow-hidden selection:bg-pink-200">
                     <GeometricBackground />
                     <FloatingHearts />
-
-                    {/* Music Toggle Button */}
-                    <button
+                    
+                    {}
+                    <button 
                         onClick={toggleMusic}
                         className="fixed top-6 right-6 z-50 p-3 rounded-full glass-card hover:scale-110 transition-transform duration-300"
                     >
@@ -256,28 +246,29 @@
                                 <motion.div animate={{ height: [4, 12, 4] }} transition={{ repeat: Infinity, duration: 0.6 }} className="w-1 bg-pink-600 rounded-full" />
                             </div>
                         ) : (
-                            <svg className="w-5 h-5 text-pink-700" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                            <svg className="w-5 h-5 text-pink-700" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         )}
                     </button>
                     <audio ref={audioRef} loop preload="auto">
                         <source src="https://cdn.pixabay.com/audio/2022/03/10/audio_4217a6d1cf.mp3" type="audio/mpeg" />
+                        <source src="./mymusic.mpeg" type="audio/mpeg" />
                     </audio>
 
-                    {/* Hero Section */}
+                    {}
                     <main className="px-6 pt-32 pb-20 w-full max-w-md mx-auto flex flex-col items-center text-center">
                         <Section className="mb-12">
-                            <motion.div
+                            <motion.div 
                                 initial={{ scale: 0.9, opacity: 0 }}
                                 animate={{ scale: 1, opacity: 1 }}
                                 transition={{ duration: 1 }}
                             >
                                 <span className="block text-sm uppercase tracking-[0.3em] text-pink-400 mb-4 font-bold">From Muzamil</span>
                                 <h1 className="font-serif text-6xl leading-[1.1] mb-6 text-gradient font-medium italic">
-                                    To Mubeena,<br />
+                                    To Mubeena,<br/>
                                     <span className="not-italic text-5xl mt-2 block">My Dua Answered.</span>
                                 </h1>
                             </motion.div>
-
+                            
                             <p className="text-lg text-gray-600 leading-relaxed font-light mb-10 px-4">
                                 Every day I thank Allah for bringing you into my life. Loving you is the most peaceful part of my journey.
                             </p>
@@ -292,7 +283,7 @@
                             </motion.button>
                         </Section>
 
-                        {/* Heart Card Modal */}
+                        {}
                         <AnimatePresence>
                             {isOpen && (
                                 <motion.div
@@ -317,7 +308,7 @@
                                         <p className="text-gray-600 mb-8 font-light leading-relaxed">
                                             May Allah bless our love, protect our bond, and guide us together in this dunya and akhirah.
                                         </p>
-                                        <button
+                                        <button 
                                             onClick={() => setIsOpen(false)}
                                             className="text-xs uppercase tracking-widest text-pink-400 hover:text-pink-600 transition-colors"
                                         >
@@ -328,7 +319,7 @@
                             )}
                         </AnimatePresence>
 
-                        {/* Our Journey Timeline */}
+                        {}
                         <Section className="w-full mt-12 mb-20">
                             <h2 className="font-serif text-3xl mb-10 text-center text-[#831843]">Our Journey</h2>
                             <div className="relative pl-4 border-l-[0.5px] border-pink-200 space-y-10 ml-4">
@@ -347,14 +338,14 @@
                             </div>
                         </Section>
 
-                        {/* Why I Love You Grid */}
+                        {}
                         <Section className="w-full mb-20">
                             <div className="flex items-center justify-center gap-3 mb-10">
                                 <div className="h-[1px] w-8 bg-pink-200"></div>
                                 <h2 className="font-serif text-3xl text-center text-[#831843] italic">Why I Love You</h2>
                                 <div className="h-[1px] w-8 bg-pink-200"></div>
                             </div>
-
+                            
                             <div className="grid grid-cols-2 gap-4">
                                 {[
                                     { title: "Your Kindness", desc: "The gentle way you treat everyone inspires me." },
@@ -364,7 +355,7 @@
                                     { title: "Your Iman", desc: "Your faith strengthens mine every day." },
                                     { title: "My Peace", desc: "With you, I've found true tranquility." }
                                 ].map((reason, i) => (
-                                    <motion.div
+                                    <motion.div 
                                         key={i}
                                         whileHover={{ y: -5 }}
                                         className="glass-card p-4 rounded-xl flex flex-col items-center justify-center text-center"
@@ -377,13 +368,14 @@
                             </div>
                         </Section>
 
-                        {/* Promise Card */}
+                        {}
                         <Section className="w-full mb-16">
                             <div className="relative bg-white p-10 rounded-[2rem] shadow-[0_20px_50px_-12px_rgba(131,24,67,0.15)] text-center overflow-hidden border border-pink-50">
+                                {}
                                 <div className="absolute top-0 right-0 w-24 h-24 opacity-10">
-                                    <svg viewBox="0 0 100 100" fill="currentColor" className="text-pink-600">
+                                     <svg viewBox="0 0 100 100" fill="currentColor" className="text-pink-600">
                                         <path d="M0 0 C 50 0, 100 0, 100 0 C 100 50, 100 100, 100 100 C 50 50, 50 50, 0 0 Z" />
-                                    </svg>
+                                     </svg>
                                 </div>
 
                                 <h3 className="font-serif text-2xl text-gradient mb-6">Mubeena</h3>
@@ -422,32 +414,32 @@
                         <Section className="w-full mt-20 mb-12">
                             <div className="flex flex-col items-center gap-3">
                                 <p className="text-xs uppercase tracking-[0.25em] text-pink-400 font-semibold">Our Story</p>
-
+                                
                                 <motion.button
                                     whileHover={{ scale: 1.03 }}
                                     whileTap={{ scale: 0.97 }}
                                     onClick={handleToggleSection}
                                     className="relative px-8 py-4 rounded-2xl text-white overflow-hidden flex items-center justify-between gap-4 w-full max-w-sm transition-all duration-300"
                                     style={{
-                                        background: isExpanded
-                                            ? 'linear-gradient(135deg, #ff8db8 0%, #ff6fa5 100%)'
+                                        background: isExpanded 
+                                            ? 'linear-gradient(135deg, #ff8db8 0%, #ff6fa5 100%)' 
                                             : 'linear-gradient(135deg, #ff6fa5 0%, #ff3d7a 100%)',
-                                        boxShadow: isExpanded
+                                        boxShadow: isExpanded 
                                             ? '0 8px 30px -8px rgba(255, 80, 120, 0.4), 0 0 0 2px rgba(255, 109, 165, 0.3)'
                                             : '0 8px 25px -8px rgba(255, 80, 120, 0.25)'
                                     }}
                                 >
                                     <span className="relative z-10 font-serif text-base font-medium tracking-wide flex-1 text-left">The Moment Everything Changed</span>
-
-                                    <motion.div
+                                    
+                                    <motion.div 
                                         className="flex items-center justify-center w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex-shrink-0"
                                         animate={{ rotate: isExpanded ? 180 : 0 }}
                                         transition={{ duration: 0.3, ease: 'easeInOut' }}
                                     >
-                                        <svg
-                                            className="w-4 h-4"
-                                            fill="none"
-                                            stroke="currentColor"
+                                        <svg 
+                                            className="w-4 h-4" 
+                                            fill="none" 
+                                            stroke="currentColor" 
                                             strokeWidth={2.5}
                                             viewBox="0 0 24 24"
                                         >
@@ -461,14 +453,14 @@
                             <motion.div
                                 ref={sectionRef}
                                 initial={false}
-                                animate={{
+                                animate={{ 
                                     height: isExpanded ? 'auto' : 0,
                                     opacity: isExpanded ? 1 : 0
                                 }}
                                 transition={{ duration: 0.5, ease: 'easeInOut' }}
                                 style={{ overflow: 'hidden' }}
                             >
-                                <motion.div
+                                <motion.div 
                                     initial={{ y: -20 }}
                                     animate={{ y: isExpanded ? 0 : -20 }}
                                     transition={{ duration: 0.5 }}
@@ -483,18 +475,18 @@
                                         transition={{ delay: 0.3, duration: 0.5 }}
                                     >
                                         <HeartIcon className="w-12 h-12 text-pink-400 mx-auto mb-4" />
-
+                                        
                                         <h3 className="font-serif text-3xl text-[#831843] mb-3 italic text-center">
                                             A Beautiful Beginning
                                         </h3>
-
+                                        
                                         <div className="w-16 h-[1px] bg-pink-300 mx-auto mb-6" />
-
+                                        
                                         <p className="text-gray-700 leading-relaxed font-light text-base text-center">
-                                            Allah writes stories in the most unexpected moments.<br /><br />
-                                            Ours began in a quiet conversation,<br />
-                                            while snow fell like a gentle reminder of His plans.<br />
-                                            That night, without realizing it,<br />
+                                            Allah writes stories in the most unexpected moments.<br/><br/>
+                                            Ours began in a quiet conversation,<br/>
+                                            while snow fell like a gentle reminder of His plans.<br/>
+                                            That night, without realizing it,<br/>
                                             my world began to change.
                                         </p>
                                     </motion.div>
@@ -518,6 +510,4 @@
         root.render(<App />);
     </script>
 
-</body>
-
-</html>
+</body></html>
